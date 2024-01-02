@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router-dom";
 
-const Post = ({ postId, posts, history }) => {
+const Post = ({ postId, posts }) => {
+    const history = useHistory();
     const handleSave = () => {
         history.replace("/posts");
     };
@@ -17,8 +19,7 @@ const Post = ({ postId, posts, history }) => {
 
 Post.propTypes = {
     postId: PropTypes.string,
-    posts: PropTypes.array,
-    history: PropTypes.object
+    posts: PropTypes.array
 };
 
 export default Post;
