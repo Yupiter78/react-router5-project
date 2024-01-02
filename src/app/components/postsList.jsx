@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const PostsList = ({ posts }) => {
     return (
         <>
             {posts.map((post) => (
-                <h3 key={post._id}>{post.label}</h3>
+                <Link key={post._id} to={`/posts/${post._id}`}>
+                    <h3>{post.label}</h3>
+                </Link>
             ))}
         </>
     );
